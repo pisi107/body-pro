@@ -663,7 +663,6 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
-// CONFIGURAZIONE FIREBASE (Opzionale / Modalità Demo Locale Attiva)
 const firebaseConfig = { apiKey: "INSERISCI_API_KEY", authDomain: "PROJECT.firebaseapp.com", projectId: "PROJECT", storageBucket: "PROJECT.appspot.com", messagingSenderId: "ID", appId: "APP_ID" };
 let auth = null, db = null, firebaseReady = false;
 try {
@@ -677,7 +676,6 @@ let workoutIndex = 0, workoutSet = 1, completedSets = 0, restInterval = null, re
 const $ = id => document.getElementById(id);
 const DEMO_STORAGE = 'bodypro_elite_demo_v2';
 
-// LIBRERIA ESERCIZI COMPLETA CON FOTO HD E SPIEGAZIONI TECNICHE
 const exercises = [
   {
     id: 'push', name: 'Push-up Classici', group: 'Petto', sets: 3, reps: 12, rest: 60, difficulty: 'Principiante',
@@ -770,8 +768,8 @@ function demoId() { return 'id_' + Date.now() + '_' + Math.random().toString(36)
 function showAuthMessage(msg) { $('authMessage').textContent = msg; }
 function showRegister() { $('loginForm').classList.add('hidden'); $('registerForm').classList.remove('hidden'); showAuthMessage(''); }
 function showLogin() { $('registerForm').classList.add('hidden'); $('loginForm').classList.remove('hidden'); showAuthMessage(''); }
+function resetPassword() { showAuthMessage('Funzione di recupero password simulata. Usa admin / admin'); }
 
-// GESTIONE LOGIN / REGISTRAZIONE
 async function login() {
   const user = $('loginEmail').value.trim(), pass = $('loginPassword').value;
   if (!firebaseReady) {
@@ -835,7 +833,6 @@ async function loadUserData() {
     renderAll();
     return;
   }
-  // Se Firebase è attivo
   const uid = currentUser.uid;
   const [p, r, s, w] = await Promise.all([
     db.collection('users').doc(uid).get(),
@@ -891,7 +888,6 @@ async function saveDocument(col, data, id) {
   return ref.id;
 }
 
-// NAVIGAZIONE
 function go(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   $('page-' + page).classList.add('active');
@@ -900,7 +896,6 @@ function go(page) {
 }
 document.querySelectorAll('[data-page]').forEach(b => b.addEventListener('click', () => go(b.dataset.page)));
 
-// LIBRERIA ESERCIZI & MODAL DETTAGLIO
 function renderExercises() {
   const query = ($('exerciseSearch')?.value || '').toLowerCase();
   const group = $('exerciseGroup')?.value || 'all';
@@ -934,7 +929,6 @@ function openExerciseModal(id) {
 }
 function closeExerciseModal() { $('exerciseModal').classList.add('hidden'); }
 
-// SCHEDE E ROUTINE
 function populateExerciseSelect() {
   $('routineExercise').innerHTML = exercises.map(e => `<option value="${e.id}">${e.name} (${e.group})</option>`).join('');
 }
@@ -1009,7 +1003,6 @@ async function deleteRoutine(id) {
   renderAll(); toast('Scheda eliminata.');
 }
 
-// PERSONAL TRAINER AI GENERATOR
 function generatePlan() {
   const days = Number($('trainerDays').value), level = $('trainerLevel').value, duration = Number($('trainerDuration').value), goal = $('trainerGoal').value, focus =$('trainerFocus').value;
   const levelMult = level === 'Principiante' ? 0.8 : level === 'Avanzato' ? 1.2 : 1;
@@ -1046,7 +1039,6 @@ async function saveGenerated(idx) {
   go('routines');
 }
 
-// WORKOUT SESSIONE INTERATTIVA
 function startWorkout(id) {
   const r = routines.find(x => x.id === id);
   if (!r || !r.exercises?.length) { toast('La scheda è vuota.'); return; }
@@ -1123,7 +1115,6 @@ function stopWorkout() {
   }
 }
 
-// PROGRESSI E PESO
 function renderProgress() {
   const totalMin = sessions.reduce((acc, s) => acc + (Number(s.minutes) || 0), 0);
   const totalSets = sessions.reduce((acc, s) => acc + (Number(s.sets) || 0), 0);
@@ -1165,7 +1156,6 @@ function formatDate(time) {
   return d.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' });
 }
 
-// CALENDARIO
 function changeMonth(n) { calendarDate.setMonth(calendarDate.getMonth() + n); renderCalendar(); }
 function renderCalendar() {
   const year = calendarDate.getFullYear(), month = calendarDate.getMonth();
@@ -1184,7 +1174,6 @@ function renderCalendar() {
   $('calendarGrid').innerHTML = html;
 }
 
-// PROFILO
 async function saveProfile() {
   profile = {
     ...profile,
@@ -1205,7 +1194,6 @@ async function saveProfile() {
   renderAll(); toast('Profilo aggiornato!');
 }
 
-// TOAST NOTIFICATIONS
 let toastTimer;
 function toast(msg) {
   let el = $('toast');
