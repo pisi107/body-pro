@@ -6,278 +6,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101114">
 <title>BODY PRO | Fitness</title>
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
-
-:root {
- --bg:#101114;
- --panel:#191b20;
- --panel2:#20232a;
- --orange:#ff762e;
- --text:#f5f5f5;
- --muted:#92959e;
- --border:#30323a;
- --green:#39c98a;
-}
-*{box-sizing:border-box}
-body{
- margin:0;background:var(--bg);color:var(--text);
- font-family:Inter,Arial,sans-serif;
-}
-button,input,select{font:inherit}
-button{cursor:pointer}
-.hidden{display:none!important}
+:root{--bg:#101114;--panel:#191b20;--panel2:#20232a;--orange:#ff762e;--text:#f5f5f5;--muted:#92959e;--border:#30323a;--green:#39c98a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}
 h1,h2,h3,.brand{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase}
 button:disabled{opacity:.5;cursor:not-allowed}
-
-/* LOGIN */
-#authScreen{
- min-height:100vh;display:flex;align-items:center;
- justify-content:center;padding:24px;
- background:radial-gradient(ellipse at 50% 10%,#382016 0%,#101114 55%);
-}
-.auth-box{
- width:100%;max-width:420px;background:var(--panel);
- padding:30px;border:1px solid var(--border);
- border-radius:20px;box-shadow:0 20px 80px #0008;
-}
-.logo{text-align:center;margin-bottom:30px}
-.logo-mark{font-size:42px;font-weight:900;color:var(--orange);letter-spacing:-3px}
-.logo-sub{font-size:11px;letter-spacing:5px;color:var(--muted)}
-.auth-box h2{font-size:30px;margin:15px 0 8px}
-.muted{color:var(--muted);font-size:13px;line-height:1.6}
-.field{margin:16px 0}
-.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:8px}
-.field input,.field select{
- width:100%;padding:14px;background:#101114;color:white;
- border:1px solid var(--border);border-radius:10px;outline:none;
-}
+#authScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at 50% 10%,#382016 0%,#101114 55%)}
+.auth-box{width:100%;max-width:420px;background:var(--panel);padding:30px;border:1px solid var(--border);border-radius:20px;box-shadow:0 20px 80px #0008}
+.logo{text-align:center;margin-bottom:30px}.logo-mark{font-size:42px;font-weight:900;color:var(--orange);letter-spacing:-3px}.logo-sub{font-size:11px;letter-spacing:5px;color:var(--muted)}
+.auth-box h2{font-size:30px;margin:15px 0 8px}.muted{color:var(--muted);font-size:13px;line-height:1.6}
+.field{margin:16px 0}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:8px}
+.field input,.field select{width:100%;padding:14px;background:#101114;color:white;border:1px solid var(--border);border-radius:10px;outline:none}
 .field input:focus,.field select:focus{border-color:var(--orange)}
-.primary{
- width:100%;border:0;border-radius:10px;padding:14px;
- background:var(--orange);color:#fff;font-weight:800;
- transition:.2s;
-}
+.primary{width:100%;border:0;border-radius:10px;padding:14px;background:var(--orange);color:#fff;font-weight:800;transition:.2s}
 .primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.secondary{
- background:var(--panel2);color:white;border:1px solid var(--border);
- border-radius:10px;padding:12px;font-weight:700;
-}
-.link-btn{border:0;background:none;color:var(--orange);padding:10px}
-.auth-message{font-size:12px;color:#ff9870;margin-top:12px;line-height:1.5}
-
-/* APP */
-#app{min-height:100vh}
-.topbar{
- height:68px;background:#15161a;border-bottom:1px solid var(--border);
- display:flex;align-items:center;justify-content:space-between;
- padding:0 22px;position:sticky;top:0;z-index:20;
-}
-.brand{font-size:25px;font-weight:900;letter-spacing:1px}
-.brand span{color:var(--orange)}
-.top-right{display:flex;align-items:center;gap:12px}
-.avatar{
- width:36px;height:36px;background:var(--orange);border-radius:50%;
- display:grid;place-items:center;font-weight:800;
-}
+.secondary{background:var(--panel2);color:white;border:1px solid var(--border);border-radius:10px;padding:12px;font-weight:700}
+.link-btn{border:0;background:none;color:var(--orange);padding:10px}.auth-message{font-size:12px;color:#ff9870;margin-top:12px;line-height:1.5}
+#app{min-height:100vh}.topbar{height:68px;background:#15161a;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:sticky;top:0;z-index:20}
+.brand{font-size:25px;font-weight:900;letter-spacing:1px}.brand span{color:var(--orange)}
+.top-right{display:flex;align-items:center;gap:12px}.avatar{width:36px;height:36px;background:var(--orange);border-radius:50%;display:grid;place-items:center;font-weight:800}
 .logout{border:1px solid var(--border);background:transparent;color:white;padding:9px 12px;border-radius:8px;font-size:12px}
-.layout{display:flex;max-width:1500px;margin:auto}
-.sidebar{
- width:230px;flex-shrink:0;padding:24px 14px;
- border-right:1px solid var(--border);min-height:calc(100vh - 68px);
-}
+.layout{display:flex;max-width:1500px;margin:auto}.sidebar{width:230px;flex-shrink:0;padding:24px 14px;border-right:1px solid var(--border);min-height:calc(100vh - 68px)}
 .nav-label{font-size:10px;color:var(--muted);letter-spacing:2px;margin:12px 12px}
-.nav-btn{
- display:flex;align-items:center;gap:12px;width:100%;
- padding:13px 14px;margin:4px 0;border:0;border-radius:9px;
- color:#b5b7bf;background:transparent;text-align:left;font-size:13px;
-}
-.nav-btn.active,.nav-btn:hover{background:#30231d;color:var(--orange)}
-.nav-icon{font-size:18px;width:23px;text-align:center}
-.main{flex:1;min-width:0;padding:28px 30px 90px}
-.page{display:none}
-.page.active{display:block}
-.page-title{font-size:38px;margin:0 0 5px}
-.page-sub{color:var(--muted);font-size:13px;margin-bottom:25px}
-.hero{
- background:linear-gradient(110deg,#302018,#1d1b1c 65%,#191b20);
- border:1px solid #503122;border-radius:17px;padding:27px;
- display:flex;justify-content:space-between;align-items:center;gap:15px;
- margin-bottom:22px;
-}
-.hero h2{font-size:36px;margin:0 0 6px}
-.hero p{color:#c4b4ac;font-size:13px;margin:0 0 18px}
-.hero .primary{max-width:200px}
-.hero-icon{font-size:65px;opacity:.9}
+.nav-btn{display:flex;align-items:center;gap:12px;width:100%;padding:13px 14px;margin:4px 0;border:0;border-radius:9px;color:#b5b7bf;background:transparent;text-align:left;font-size:13px}
+.nav-btn.active,.nav-btn:hover{background:#30231d;color:var(--orange)}.nav-icon{font-size:18px;width:23px;text-align:center}
+.main{flex:1;min-width:0;padding:28px 30px 90px}.page{display:none}.page.active{display:block}
+.page-title{font-size:38px;margin:0 0 5px}.page-sub{color:var(--muted);font-size:13px;margin-bottom:25px}
+.hero{background:linear-gradient(110deg,#302018,#1d1b1c 65%,#191b20);border:1px solid #503122;border-radius:17px;padding:27px;display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}
+.hero h2{font-size:36px;margin:0 0 6px}.hero p{color:#c4b4ac;font-size:13px;margin:0 0 18px}.hero .primary{max-width:200px}.hero-icon{font-size:65px;opacity:.9}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:20px 0}
-.stat{
- background:var(--panel);border:1px solid var(--border);
- border-radius:13px;padding:18px;
-}
-.stat small{color:var(--muted);font-size:11px}
-.stat strong{display:block;font-size:26px;margin:9px 0 3px}
-.stat em{font-size:11px;color:var(--orange);font-style:normal}
-.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:25px 0 14px}
-.section-head h3{font-size:23px;margin:0}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.card{
- background:var(--panel);border:1px solid var(--border);
- border-radius:13px;padding:18px;min-width:0;
-}
-.card h3{font-size:22px;margin:0 0 8px}
-.card p{color:var(--muted);font-size:12px;line-height:1.6}
-.card-icon{font-size:29px;margin-bottom:10px}
-.tag{
- display:inline-block;background:#33251e;color:#ff9a68;
- border-radius:5px;padding:5px 8px;font-size:10px;margin:3px 3px 3px 0;
-}
-.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.list{display:grid;gap:10px}
-.exercise{
- display:flex;justify-content:space-between;align-items:center;
- gap:12px;padding:14px;background:var(--panel);
- border:1px solid var(--border);border-radius:11px;
-}
-.exercise strong{font-size:13px}
-.exercise small{display:block;color:var(--muted);font-size:11px;margin-top:5px}
-.exercise button{padding:9px 12px;font-size:11px}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
-.toolbar input,.toolbar select{
- background:var(--panel);color:white;border:1px solid var(--border);
- padding:11px;border-radius:9px;min-width:130px;
-}
-.toolbar input{flex:1}
-.exercise-photo{
- width:58px;height:58px;object-fit:cover;border-radius:9px;
- background:#292b30;flex-shrink:0;
-}
-.exercise-info{flex:1;min-width:0}
-.exercise-layout{display:flex;gap:12px;align-items:center;min-width:0}
-.big-btn{padding:13px 17px;width:auto}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:18px}.stat small{color:var(--muted);font-size:11px}
+.stat strong{display:block;font-size:26px;margin:9px 0 3px}.stat em{font-size:11px;color:var(--orange);font-style:normal}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:25px 0 14px}.section-head h3{font-size:23px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:18px;min-width:0}
+.card h3{font-size:22px;margin:0 0 8px}.card p{color:var(--muted);font-size:12px;line-height:1.6}
+.card-icon{font-size:29px;margin-bottom:10px}.tag{display:inline-block;background:#33251e;color:#ff9a68;border-radius:5px;padding:5px 8px;font-size:10px;margin:3px 3px 3px 0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.list{display:grid;gap:10px}
+.exercise{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px;background:var(--panel);border:1px solid var(--border);border-radius:11px}
+.exercise strong{font-size:13px}.exercise small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.exercise button{padding:9px 12px;font-size:11px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.toolbar input,.toolbar select{background:var(--panel);color:white;border:1px solid var(--border);padding:11px;border-radius:9px;min-width:130px}
+.toolbar input{flex:1}.exercise-photo{width:58px;height:58px;object-fit:cover;border-radius:9px;background:#292b30;flex-shrink:0}
+.exercise-info{flex:1;min-width:0}.exercise-layout{display:flex;gap:12px;align-items:center;min-width:0}.big-btn{padding:13px 17px;width:auto}
 .empty{padding:30px;text-align:center;color:var(--muted);background:var(--panel);border-radius:12px}
-.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.form-grid .field{margin:5px 0}
-.routine-item{
- display:flex;justify-content:space-between;gap:10px;
- padding:14px;background:var(--panel2);border-radius:9px;margin:8px 0;
-}
-.routine-item button{padding:8px 10px}
-.progress-bar{height:8px;background:#333;border-radius:10px;overflow:hidden;margin-top:9px}
-.progress-bar div{height:100%;background:var(--orange);width:0%}
-.day-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.day{
- text-align:center;padding:12px 3px;border-radius:8px;
- background:var(--panel);font-size:11px;color:var(--muted);
-}
-.day.done{background:#293b32;color:var(--green)}
-.day.today{border:1px solid var(--orange)}
-/* WORKOUT */
-#workoutScreen{
- position:fixed;inset:0;background:#101114;z-index:50;
- padding:25px;overflow:auto;
-}
-.workout-inner{max-width:600px;margin:20px auto;text-align:center}
-.workout-inner h1{font-size:42px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.form-grid .field{margin:5px 0}
+.routine-item{display:flex;justify-content:space-between;gap:10px;padding:14px;background:var(--panel2);border-radius:9px;margin:8px 0}
+.routine-item button{padding:8px 10px}.progress-bar{height:8px;background:#333;border-radius:10px;overflow:hidden;margin-top:9px}
+.progress-bar div{height:100%;background:var(--orange);width:0%}.day-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day{text-align:center;padding:12px 3px;border-radius:8px;background:var(--panel);font-size:11px;color:var(--muted)}
+.day.done{background:#293b32;color:var(--green)}.day.today{border:1px solid var(--orange)}
+#workoutScreen{position:fixed;inset:0;background:#101114;z-index:50;padding:25px;overflow:auto}
+.workout-inner{max-width:600px;margin:20px auto;text-align:center}.workout-inner h1{font-size:42px}
 .workout-photo{width:100%;max-height:260px;object-fit:cover;border-radius:15px;background:#222}
 .big-number{font-size:70px;font-weight:900;color:var(--orange);margin:20px 0}
-.workout-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.workout-controls button{min-width:125px}
-.toast{
- position:fixed;bottom:25px;left:50%;transform:translateX(-50%);
- background:#292b30;color:white;padding:13px 20px;border-radius:10px;
- z-index:100;font-size:12px;box-shadow:0 5px 25px #0008;
-}
+.workout-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.workout-controls button{min-width:125px}
+.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#292b30;color:white;padding:13px 20px;border-radius:10px;z-index:100;font-size:12px;box-shadow:0 5px 25px #0008}
 .mobile-nav{display:none}
-@media(max-width:850px){
- .sidebar{width:190px}
- .main{padding:22px 18px 90px}
- .stats-grid{grid-template-columns:repeat(2,1fr)}
- .cards{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
- .sidebar{display:none}
- .main{padding:19px 14px 90px}
- .topbar{padding:0 14px}
- .hero{padding:19px}
- .hero h2{font-size:29px}
- .hero-icon{font-size:45px}
- .cards{grid-template-columns:1fr 1fr}
- .card{padding:13px}
- .form-grid{grid-template-columns:1fr}
- .page-title{font-size:33px}
- .mobile-nav{
-  display:flex;position:fixed;bottom:0;left:0;right:0;
-  background:#17181c;border-top:1px solid var(--border);
-  z-index:30;justify-content:space-around;padding:8px 3px env(safe-area-inset-bottom);
- }
- .mobile-nav button{
-  flex:1;background:none;border:0;color:var(--muted);
-  font-size:10px;padding:5px 1px;
- }
- .mobile-nav button span{display:block;font-size:19px;margin-bottom:4px}
- .mobile-nav button.active{color:var(--orange)}
- .exercise{padding:10px}
- .exercise-photo{width:49px;height:49px}
-}
+@media(max-width:850px){.sidebar{width:190px}.main{padding:22px 18px 90px}.stats-grid{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.sidebar{display:none}.main{padding:19px 14px 90px}.topbar{padding:0 14px}.hero{padding:19px}.hero h2{font-size:29px}.hero-icon{font-size:45px}.cards{grid-template-columns:1fr 1fr}.card{padding:13px}.form-grid{grid-template-columns:1fr}.page-title{font-size:33px}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:#17181c;border-top:1px solid var(--border);z-index:30;justify-content:space-around;padding:8px 3px env(safe-area-inset-bottom)}.mobile-nav button{flex:1;background:none;border:0;color:var(--muted);font-size:10px;padding:5px 1px}.mobile-nav button span{display:block;font-size:19px;margin-bottom:4px}.mobile-nav button.active{color:var(--orange)}.exercise{padding:10px}.exercise-photo{width:49px;height:49px}}
 </style>
 </head>
-
 <body>
 
-<!-- ACCESSO -->
 <section id="authScreen">
  <div class="auth-box">
-  <div class="logo">
-   <div class="logo-mark">BODY PRO</div>
-   <div class="logo-sub">TRAIN • EVOLVE • REPEAT</div>
-  </div>
-
+  <div class="logo"><div class="logo-mark">BODY PRO</div><div class="logo-sub">TRAIN • EVOLVE • REPEAT</div></div>
   <div id="loginForm">
    <h2>BENTORNATO.</h2>
    <p class="muted">Accedi al tuo spazio personale e continua il tuo percorso.</p>
-   <div class="field"><label>EMAIL</label><input id="loginEmail" type="email" placeholder="La tua email" autocomplete="email"></div>
+   <div class="field"><label>USERNAME</label><input id="loginEmail" type="text" placeholder="Username" autocomplete="username"></div>
    <div class="field"><label>PASSWORD</label><input id="loginPassword" type="password" placeholder="La tua password" autocomplete="current-password"></div>
    <button class="primary" onclick="login()">ACCEDI</button>
-   <div style="text-align:center;margin-top:12px">
-    <button class="link-btn" onclick="resetPassword()">Password dimenticata?</button>
-   </div>
-   <p class="muted" style="text-align:center;margin-top:15px">Non hai un account?
-    <button class="link-btn" onclick="showRegister()">Registrati</button>
-   </p>
+   <p class="muted" style="text-align:center;margin-top:12px">Accesso demo: <b>admin / admin</b></p>
+   <div style="text-align:center;margin-top:12px"><button class="link-btn" onclick="resetPassword()">Password dimenticata?</button></div>
+   <p class="muted" style="text-align:center;margin-top:15px">Non hai un account? <button class="link-btn" onclick="showRegister()">Registrati</button></p>
   </div>
-
   <div id="registerForm" class="hidden">
-   <h2>UNISCITI A NOI.</h2>
-   <p class="muted">Crea il tuo account gratuito BODY PRO.</p>
+   <h2>UNISCITI A NOI.</h2><p class="muted">Crea il tuo account gratuito BODY PRO.</p>
    <div class="field"><label>NOME</label><input id="regName" placeholder="Nome" autocomplete="given-name"></div>
    <div class="field"><label>COGNOME</label><input id="regSurname" placeholder="Cognome" autocomplete="family-name"></div>
    <div class="field"><label>EMAIL</label><input id="regEmail" type="email" placeholder="Email" autocomplete="email"></div>
    <div class="field"><label>PASSWORD (almeno 8 caratteri)</label><input id="regPassword" type="password" placeholder="Crea una password" autocomplete="new-password"></div>
-   <label class="muted" style="display:flex;gap:8px;align-items:start">
-    <input type="checkbox" id="privacyCheck">
-    Accetto le condizioni d'uso e la privacy policy.
-   </label>
+   <label class="muted" style="display:flex;gap:8px;align-items:start"><input type="checkbox" id="privacyCheck">Accetto le condizioni d'uso e la privacy policy.</label>
    <button class="primary" style="margin-top:18px" onclick="register()">CREA ACCOUNT</button>
-   <p class="muted" style="text-align:center">Hai già un account?
-    <button class="link-btn" onclick="showLogin()">Accedi</button>
-   </p>
+   <p class="muted" style="text-align:center">Hai già un account? <button class="link-btn" onclick="showLogin()">Accedi</button></p>
   </div>
   <div id="authMessage" class="auth-message"></div>
  </div>
 </section>
 
-<!-- APPLICAZIONE -->
 <div id="app" class="hidden">
  <header class="topbar">
   <div class="brand">BODY <span>PRO</span></div>
-  <div class="top-right">
-   <div class="avatar" id="avatar">U</div>
-   <span id="topName" style="font-size:12px"></span>
-   <button class="logout" onclick="logout()">ESCI</button>
-  </div>
+  <div class="top-right"><div class="avatar" id="avatar">U</div><span id="topName" style="font-size:12px"></span><button class="logout" onclick="logout()">ESCI</button></div>
  </header>
-
  <div class="layout">
   <aside class="sidebar">
    <div class="nav-label">MENU PRINCIPALE</div>
@@ -290,21 +113,10 @@ button:disabled{opacity:.5;cursor:not-allowed}
    <div class="nav-label" style="margin-top:30px">ACCOUNT</div>
    <button class="nav-btn" data-page="profile"><span class="nav-icon">◉</span>Profilo</button>
   </aside>
-
   <main class="main">
-
-   <!-- HOME -->
    <section class="page active" id="page-home">
-    <div class="hero">
-     <div>
-      <h2>OGGI È IL TUO GIORNO.</h2>
-      <p>Ogni ripetizione ti avvicina al tuo obiettivo.</p>
-      <button class="primary" onclick="go('trainer')">CREA ALLENAMENTO →</button>
-     </div>
-     <div class="hero-icon">🏋️</div>
-    </div>
-    <h1 class="page-title">CIAO, <span id="welcomeName" style="color:var(--orange)">ATLETA</span></h1>
-    <p class="page-sub">Ecco il riepilogo del tuo percorso.</p>
+    <div class="hero"><div><h2>OGGI È IL TUO GIORNO.</h2><p>Ogni ripetizione ti avvicina al tuo obiettivo.</p><button class="primary" onclick="go('trainer')">CREA ALLENAMENTO →</button></div><div class="hero-icon">🏋️</div></div>
+    <h1 class="page-title">CIAO, <span id="welcomeName" style="color:var(--orange)">ATLETA</span></h1><p class="page-sub">Ecco il riepilogo del tuo percorso.</p>
     <div class="stats-grid">
      <div class="stat"><small>ALLENAMENTI</small><strong id="statWorkouts">0</strong><em>Completati</em></div>
      <div class="stat"><small>MINUTI TOTALI</small><strong id="statMinutes">0</strong><em>Tempo attivo</em></div>
@@ -312,11 +124,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
      <div class="stat"><small>OBIETTIVO</small><strong id="statGoal">—</strong><em>Attuale</em></div>
     </div>
     <div class="section-head"><h3>IL TUO PERCORSO</h3></div>
-    <div class="card">
-     <div class="row"><strong>Costanza settimanale</strong><span id="weeklyCount" style="color:var(--orange)">0 allenamenti</span></div>
-     <div class="progress-bar"><div id="weeklyBar"></div></div>
-     <p>Completa gli allenamenti e costruisci la tua costanza.</p>
-    </div>
+    <div class="card"><div class="row"><strong>Costanza settimanale</strong><span id="weeklyCount" style="color:var(--orange)">0 allenamenti</span></div><div class="progress-bar"><div id="weeklyBar"></div></div><p>Completa gli allenamenti e costruisci la tua costanza.</p></div>
     <div class="section-head"><h3>ACCESSO RAPIDO</h3></div>
     <div class="cards">
      <div class="card" onclick="go('exercises')" style="cursor:pointer"><div class="card-icon">💪</div><h3>ESERCIZI</h3><p>Scopri la libreria completa.</p></div>
@@ -325,379 +133,236 @@ button:disabled{opacity:.5;cursor:not-allowed}
     </div>
    </section>
 
-   <!-- PERSONAL TRAINER -->
    <section class="page" id="page-trainer">
-    <h1 class="page-title">PERSONAL TRAINER</h1>
-    <p class="page-sub">Costruiamo un programma in base alle tue preferenze.</p>
-    <div class="card">
-     <h3>CONFIGURA IL TUO PROGRAMMA</h3>
+    <h1 class="page-title">PERSONAL TRAINER</h1><p class="page-sub">Costruiamo un programma in base alle tue preferenze.</p>
+    <div class="card"><h3>CONFIGURA IL TUO PROGRAMMA</h3>
      <div class="form-grid">
-      <div class="field"><label>LIVELLO</label>
-       <select id="trainerLevel"><option>Principiante</option><option>Intermedio</option><option>Avanzato</option></select>
-      </div>
-      <div class="field"><label>GIORNI A SETTIMANA</label>
-       <select id="trainerDays"><option value="1">1 giorno</option><option value="2">2 giorni</option><option value="3" selected>3 giorni</option><option value="4">4 giorni</option><option value="5">5 giorni</option><option value="6">6 giorni</option><option value="7">7 giorni</option></select>
-      </div>
-      <div class="field"><label>DURATA</label>
-       <select id="trainerDuration"><option value="15">15 minuti</option><option value="30">30 minuti</option><option value="45" selected>45 minuti</option><option value="60">60 minuti</option><option value="90">90 minuti</option></select>
-      </div>
-      <div class="field"><label>ATTREZZATURA</label>
-       <select id="trainerEquipment"><option value="body">Solo corpo libero</option><option value="bar">Corpo libero + sbarra</option><option value="all">Anche piccoli attrezzi</option></select>
-      </div>
-      <div class="field"><label>OBIETTIVO</label>
-       <select id="trainerGoal"><option>Forza</option><option>Massa muscolare</option><option>Resistenza</option><option>Definizione</option><option>Forma fisica generale</option></select>
-      </div>
-      <div class="field"><label>FOCUS</label>
-       <select id="trainerFocus"><option value="all">Tutto il corpo</option><option value="upper">Parte superiore</option><option value="lower">Parte inferiore</option><option value="core">Addome e core</option></select>
-      </div>
+      <div class="field"><label>LIVELLO</label><select id="trainerLevel"><option>Principiante</option><option>Intermedio</option><option>Avanzato</option></select></div>
+      <div class="field"><label>GIORNI A SETTIMANA</label><select id="trainerDays"><option value="1">1 giorno</option><option value="2">2 giorni</option><option value="3" selected>3 giorni</option><option value="4">4 giorni</option><option value="5">5 giorni</option><option value="6">6 giorni</option><option value="7">7 giorni</option></select></div>
+      <div class="field"><label>DURATA</label><select id="trainerDuration"><option value="15">15 minuti</option><option value="30">30 minuti</option><option value="45" selected>45 minuti</option><option value="60">60 minuti</option><option value="90">90 minuti</option></select></div>
+      <div class="field"><label>ATTREZZATURA</label><select id="trainerEquipment"><option value="body">Solo corpo libero</option><option value="bar">Corpo libero + sbarra</option><option value="all">Anche piccoli attrezzi</option></select></div>
+      <div class="field"><label>OBIETTIVO</label><select id="trainerGoal"><option>Forza</option><option>Massa muscolare</option><option>Resistenza</option><option>Definizione</option><option>Forma fisica generale</option></select></div>
+      <div class="field"><label>FOCUS</label><select id="trainerFocus"><option value="all">Tutto il corpo</option><option value="upper">Parte superiore</option><option value="lower">Parte inferiore</option><option value="core">Addome e core</option></select></div>
      </div>
      <button class="primary" onclick="generatePlan()">GENERA IL MIO PROGRAMMA</button>
-    </div>
-    <div id="generatedPlan" style="margin-top:18px"></div>
+    </div><div id="generatedPlan" style="margin-top:18px"></div>
    </section>
 
-   <!-- ESERCIZI -->
    <section class="page" id="page-exercises">
-    <h1 class="page-title">LIBRERIA ESERCIZI</h1>
-    <p class="page-sub">Scopri gli esercizi e aggiungili alle tue schede.</p>
-    <div class="toolbar">
-     <input id="exerciseSearch" placeholder="Cerca un esercizio..." oninput="renderExercises()">
-     <select id="exerciseGroup" onchange="renderExercises()">
-      <option value="all">Tutti i gruppi</option>
-      <option>Petto</option><option>Braccia</option><option>Spalle</option>
-      <option>Schiena</option><option>Gambe</option><option>Addome</option><option>Full body</option>
-     </select>
-    </div>
-    <div class="list" id="exerciseList"></div>
+    <h1 class="page-title">LIBRERIA ESERCIZI</h1><p class="page-sub">Scopri gli esercizi e aggiungili alle tue schede.</p>
+    <div class="toolbar"><input id="exerciseSearch" placeholder="Cerca un esercizio..." oninput="renderExercises()">
+     <select id="exerciseGroup" onchange="renderExercises()"><option value="all">Tutti i gruppi</option><option>Petto</option><option>Braccia</option><option>Spalle</option><option>Schiena</option><option>Gambe</option><option>Addome</option><option>Full body</option></select>
+    </div><div class="list" id="exerciseList"></div>
    </section>
 
-   <!-- SCHEDE -->
    <section class="page" id="page-routines">
-    <div class="row">
-     <div><h1 class="page-title">LE MIE SCHEDE</h1><p class="page-sub">I tuoi programmi personalizzati.</p></div>
-     <button class="primary big-btn" onclick="openCreateRoutine()">+ NUOVA</button>
-    </div>
+    <div class="row"><div><h1 class="page-title">LE MIE SCHEDE</h1><p class="page-sub">I tuoi programmi personalizzati.</p></div><button class="primary big-btn" onclick="openCreateRoutine()">+ NUOVA</button></div>
     <div id="routineList"></div>
-    <div id="routineEditor" class="card hidden" style="margin-top:20px">
-     <h3>CREA LA TUA SCHEDA</h3>
+    <div id="routineEditor" class="card hidden" style="margin-top:20px"><h3>CREA LA TUA SCHEDA</h3>
      <div class="field"><label>NOME SCHEDA</label><input id="routineName" placeholder="Es. Petto e tricipiti"></div>
-     <div class="field"><label>GRUPPO MUSCOLARE</label>
-      <select id="routineGroup"><option>Full body</option><option>Petto</option><option>Braccia</option><option>Schiena</option><option>Gambe</option><option>Addome</option><option>Spalle</option></select>
-     </div>
-     <div class="field"><label>AGGIUNGI ESERCIZI</label>
-      <select id="routineExercise"></select>
-     </div>
-     <button class="secondary" onclick="addExerciseToDraft()">+ AGGIUNGI ESERCIZIO</button>
-     <div id="draftList" style="margin-top:12px"></div>
-     <div class="row" style="margin-top:18px">
-      <button class="secondary" onclick="closeCreateRoutine()">ANNULLA</button>
-      <button class="primary big-btn" onclick="saveRoutine()">SALVA SCHEDA</button>
-     </div>
+     <div class="field"><label>GRUPPO MUSCOLARE</label><select id="routineGroup"><option>Full body</option><option>Petto</option><option>Braccia</option><option>Schiena</option><option>Gambe</option><option>Addome</option><option>Spalle</option></select></div>
+     <div class="field"><label>AGGIUNGI ESERCIZI</label><select id="routineExercise"></select></div>
+     <button class="secondary" onclick="addExerciseToDraft()">+ AGGIUNGI ESERCIZIO</button><div id="draftList" style="margin-top:12px"></div>
+     <div class="row" style="margin-top:18px"><button class="secondary" onclick="closeCreateRoutine()">ANNULLA</button><button class="primary big-btn" onclick="saveRoutine()">SALVA SCHEDA</button></div>
     </div>
    </section>
 
-   <!-- PROGRESSI -->
    <section class="page" id="page-progress">
-    <h1 class="page-title">I TUOI PROGRESSI</h1>
-    <p class="page-sub">La tua costanza è il tuo miglior risultato.</p>
-    <div class="stats-grid">
-     <div class="stat"><small>ALLENAMENTI</small><strong id="progressWorkouts">0</strong></div>
-     <div class="stat"><small>MINUTI TOTALI</small><strong id="progressMinutes">0</strong></div>
-     <div class="stat"><small>SERIE COMPLETATE</small><strong id="progressSets">0</strong></div>
-     <div class="stat"><small>MEDIA SETTIMANALE</small><strong id="progressAverage">0</strong></div>
-    </div>
-    <div class="card">
-     <h3>STORICO ALLENAMENTI</h3>
-     <div id="historyList"></div>
-    </div>
-    <div class="card" style="margin-top:15px">
-     <h3>REGISTRA IL TUO PESO</h3>
-     <div class="row">
-      <input id="weightInput" type="number" step="0.1" placeholder="Peso in kg" style="background:#101114;color:white;border:1px solid var(--border);padding:12px;border-radius:8px;min-width:0;width:65%">
-      <button class="primary big-btn" onclick="saveWeight()">SALVA</button>
-     </div>
-     <div id="weightHistory" class="muted" style="margin-top:12px"></div>
-    </div>
+    <h1 class="page-title">I TUOI PROGRESSI</h1><p class="page-sub">La tua costanza è il tuo miglior risultato.</p>
+    <div class="stats-grid"><div class="stat"><small>ALLENAMENTI</small><strong id="progressWorkouts">0</strong></div><div class="stat"><small>MINUTI TOTALI</small><strong id="progressMinutes">0</strong></div><div class="stat"><small>SERIE COMPLETATE</small><strong id="progressSets">0</strong></div><div class="stat"><small>MEDIA SETTIMANALE</small><strong id="progressAverage">0</strong></div></div>
+    <div class="card"><h3>STORICO ALLENAMENTI</h3><div id="historyList"></div></div>
+    <div class="card" style="margin-top:15px"><h3>REGISTRA IL TUO PESO</h3><div class="row"><input id="weightInput" type="number" step="0.1" placeholder="Peso in kg" style="background:#101114;color:white;border:1px solid var(--border);padding:12px;border-radius:8px;min-width:0;width:65%"><button class="primary big-btn" onclick="saveWeight()">SALVA</button></div><div id="weightHistory" class="muted" style="margin-top:12px"></div></div>
    </section>
 
-   <!-- CALENDARIO -->
    <section class="page" id="page-calendar">
-    <h1 class="page-title">CALENDARIO</h1>
-    <p class="page-sub">La tua attività nel tempo.</p>
-    <div class="card">
-     <div class="row">
-      <button class="secondary" onclick="changeMonth(-1)">‹</button>
-      <h3 id="calendarTitle"></h3>
-      <button class="secondary" onclick="changeMonth(1)">›</button>
-     </div>
-     <div id="calendarGrid" class="day-grid" style="margin-top:15px"></div>
-     <p class="muted">I giorni verdi indicano un allenamento completato.</p>
-    </div>
+    <h1 class="page-title">CALENDARIO</h1><p class="page-sub">La tua attività nel tempo.</p>
+    <div class="card"><div class="row"><button class="secondary" onclick="changeMonth(-1)">‹</button><h3 id="calendarTitle"></h3><button class="secondary" onclick="changeMonth(1)">›</button></div><div id="calendarGrid" class="day-grid" style="margin-top:15px"></div><p class="muted">I giorni verdi indicano un allenamento completato.</p></div>
    </section>
 
-   <!-- PROFILO -->
    <section class="page" id="page-profile">
-    <h1 class="page-title">IL TUO PROFILO</h1>
-    <p class="page-sub">Le tue informazioni e preferenze personali.</p>
-    <div class="card">
-     <h3>DATI PERSONALI</h3>
-     <div class="form-grid">
-      <div class="field"><label>NOME</label><input id="profileName"></div>
-      <div class="field"><label>COGNOME</label><input id="profileSurname"></div>
-      <div class="field"><label>ETÀ</label><input id="profileAge" type="number" min="13" max="100"></div>
-      <div class="field"><label>ALTEZZA (CM)</label><input id="profileHeight" type="number"></div>
-      <div class="field"><label>PESO (KG)</label><input id="profileWeight" type="number" step="0.1"></div>
-      <div class="field"><label>OBIETTIVO</label>
-       <select id="profileGoal"><option>Forza</option><option>Massa muscolare</option><option>Resistenza</option><option>Definizione</option><option>Forma fisica generale</option></select>
-      </div>
-     </div>
-     <button class="primary" onclick="saveProfile()">SALVA PROFILO</button>
-     <p class="muted" id="profileEmail" style="margin-top:15px"></p>
-    </div>
+    <h1 class="page-title">IL TUO PROFILO</h1><p class="page-sub">Le tue informazioni e preferenze personali.</p>
+    <div class="card"><h3>DATI PERSONALI</h3><div class="form-grid">
+     <div class="field"><label>NOME</label><input id="profileName"></div><div class="field"><label>COGNOME</label><input id="profileSurname"></div>
+     <div class="field"><label>ETÀ</label><input id="profileAge" type="number" min="13" max="100"></div><div class="field"><label>ALTEZZA (CM)</label><input id="profileHeight" type="number"></div>
+     <div class="field"><label>PESO (KG)</label><input id="profileWeight" type="number" step="0.1"></div>
+     <div class="field"><label>OBIETTIVO</label><select id="profileGoal"><option>Forza</option><option>Massa muscolare</option><option>Resistenza</option><option>Definizione</option><option>Forma fisica generale</option></select></div>
+    </div><button class="primary" onclick="saveProfile()">SALVA PROFILO</button><p class="muted" id="profileEmail" style="margin-top:15px"></p></div>
    </section>
   </main>
  </div>
-
- <nav class="mobile-nav">
-  <button class="active" data-page="home"><span>⌂</span>Home</button>
-  <button data-page="trainer"><span>✦</span>Trainer</button>
-  <button data-page="exercises"><span>💪</span>Esercizi</button>
-  <button data-page="routines"><span>▤</span>Schede</button>
-  <button data-page="progress"><span>↗</span>Progressi</button>
- </nav>
+ <nav class="mobile-nav"><button class="active" data-page="home"><span>⌂</span>Home</button><button data-page="trainer"><span>✦</span>Trainer</button><button data-page="exercises"><span>💪</span>Esercizi</button><button data-page="routines"><span>▤</span>Schede</button><button data-page="progress"><span>↗</span>Progressi</button></nav>
 </div>
 
-<!-- ALLENAMENTO IN CORSO -->
-<div id="workoutScreen" class="hidden">
- <div class="workout-inner">
-  <div class="row"><div class="brand">BODY <span>PRO</span></div><button class="secondary" onclick="stopWorkout()">✕ ESCI</button></div>
-  <p class="muted" id="workoutCounter"></p>
-  <h1 id="workoutExercise">ALLENAMENTO</h1>
-  <img id="workoutPhoto" class="workout-photo" alt="Dimostrazione esercizio">
-  <div id="workoutDetails" class="muted"></div>
-  <div class="big-number" id="workoutSet">1 / 3</div>
-  <div class="workout-controls">
-   <button class="secondary" onclick="startRest()">⏱ RECUPERO</button>
-   <button class="primary big-btn" onclick="completeSet()">SERIE COMPLETATA ✓</button>
-  </div>
-  <div id="restTimer" class="big-number hidden">00:30</div>
-  <button class="secondary" style="margin-top:20px" onclick="nextExercise()">SALTA ESERCIZIO →</button>
- </div>
-</div>
+<div id="workoutScreen" class="hidden"><div class="workout-inner">
+ <div class="row"><div class="brand">BODY <span>PRO</span></div><button class="secondary" onclick="stopWorkout()">✕ ESCI</button></div>
+ <p class="muted" id="workoutCounter"></p><h1 id="workoutExercise">ALLENAMENTO</h1>
+ <img id="workoutPhoto" class="workout-photo" alt="Dimostrazione esercizio"><div id="workoutDetails" class="muted"></div>
+ <div class="big-number" id="workoutSet">1 / 3</div>
+ <div class="workout-controls"><button class="secondary" onclick="startRest()">⏱ RECUPERO</button><button class="primary big-btn" onclick="completeSet()">SERIE COMPLETATA ✓</button></div>
+ <div id="restTimer" class="big-number hidden">00:30</div><button class="secondary" style="margin-top:20px" onclick="nextExercise()">SALTA ESERCIZIO →</button>
+</div></div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-
 <script>
 // ==================================================
-// 1. INSERISCI QUI LA CONFIGURAZIONE DEL TUO FIREBASE
+// 1. FIREBASE - DA CONFIGURARE IN FUTURO
 // ==================================================
-const firebaseConfig = {
- apiKey: "INSERISCI_API_KEY",
- authDomain: "INSERISCI_PROJECT_ID.firebaseapp.com",
- projectId: "INSERISCI_PROJECT_ID",
- storageBucket: "INSERISCI_PROJECT_ID.appspot.com",
- messagingSenderId: "INSERISCI_MESSAGING_SENDER_ID",
- appId: "INSERISCI_APP_ID"
-};
-
-let auth = null;
-let db = null;
-let firebaseReady = false;
-
-try {
- if(firebaseConfig.apiKey !== "INSERISCI_API_KEY" &&
-    firebaseConfig.projectId !== "INSERISCI_PROJECT_ID"){
-  firebase.initializeApp(firebaseConfig);
-  auth = firebase.auth();
-  db = firebase.firestore();
-  firebaseReady = true;
+const firebaseConfig={apiKey:"INSERISCI_API_KEY",authDomain:"INSERISCI_PROJECT_ID.firebaseapp.com",projectId:"INSERISCI_PROJECT_ID",storageBucket:"INSERISCI_PROJECT_ID.appspot.com",messagingSenderId:"INSERISCI_MESSAGING_SENDER_ID",appId:"INSERISCI_APP_ID"};
+let auth=null,db=null,firebaseReady=false;
+try{
+ if(firebaseConfig.apiKey!=="INSERISCI_API_KEY"&&firebaseConfig.projectId!=="INSERISCI_PROJECT_ID"){
+  firebase.initializeApp(firebaseConfig);auth=firebase.auth();db=firebase.firestore();firebaseReady=true;
  }
-} catch(e){console.error(e);}
+}catch(e){console.error(e);}
 
-let currentUser=null;
-let profile={};
-let routines=[];
-let sessions=[];
-let weights=[];
-let draft=[];
-let activeWorkout=null;
-let workoutIndex=0;
-let workoutSet=1;
-let completedSets=0;
-let restInterval=null;
-let restRemaining=30;
-let calendarDate=new Date();
-
+let currentUser=null,profile={},routines=[],sessions=[],weights=[],draft=[],activeWorkout=null;
+let workoutIndex=0,workoutSet=1,completedSets=0,restInterval=null,restRemaining=30,calendarDate=new Date();
 const $=id=>document.getElementById(id);
+const DEMO_USERNAME='admin',DEMO_PASSWORD='admin',DEMO_STORAGE_KEY='bodypro_admin_demo_v1';
+
 const exercises=[
- {id:'push',name:'Push-up',group:'Petto',sets:3,reps:12,rest:60,difficulty:'Facile',desc:'Mantieni il corpo in linea, scendi controllando il movimento e spingi verso l’alto.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
- {id:'widepush',name:'Push-up larghi',group:'Petto',sets:3,reps:10,rest:60,difficulty:'Intermedio',desc:'Mani più larghe delle spalle, busto stabile e movimento controllato.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
- {id:'diamond',name:'Diamond push-up',group:'Braccia',sets:3,reps:8,rest:75,difficulty:'Avanzato',desc:'Unisci le mani sotto il petto e mantieni i gomiti controllati.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
- {id:'dip',name:'Dip',group:'Braccia',sets:3,reps:10,rest:75,difficulty:'Intermedio',desc:'Fletti i gomiti controllando la discesa. Usa un supporto stabile e sicuro.',image:'https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500'},
- {id:'squat',name:'Squat',group:'Gambe',sets:3,reps:15,rest:60,difficulty:'Facile',desc:'Piedi alla larghezza delle spalle, scendi mantenendo il controllo.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
- {id:'lunge',name:'Affondi alternati',group:'Gambe',sets:3,reps:12,rest:60,difficulty:'Facile',desc:'Fai un passo avanti, piega entrambe le ginocchia e alterna le gambe.',image:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=500'},
- {id:'bulgarian',name:'Bulgarian squat',group:'Gambe',sets:3,reps:10,rest:75,difficulty:'Avanzato',desc:'Appoggia il piede posteriore su un supporto stabile e scendi lentamente.',image:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=500'},
- {id:'calf',name:'Calf raises',group:'Gambe',sets:3,reps:20,rest:45,difficulty:'Facile',desc:'Sali sulle punte dei piedi, fermati in alto e scendi lentamente.',image:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=500'},
- {id:'plank',name:'Plank',group:'Addome',sets:3,reps:30,unit:'sec',rest:45,difficulty:'Facile',desc:'Mantieni una linea retta dalla testa ai talloni, senza inarcare la schiena.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
- {id:'crunch',name:'Crunch',group:'Addome',sets:3,reps:15,rest:45,difficulty:'Facile',desc:'Solleva le spalle contraendo l’addome, senza tirare il collo.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
- {id:'legraise',name:'Leg raises',group:'Addome',sets:3,reps:12,rest:60,difficulty:'Intermedio',desc:'Solleva le gambe mantenendo controllato il bacino.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
- {id:'mountain',name:'Mountain climber',group:'Full body',sets:3,reps:30,unit:'sec',rest:45,difficulty:'Intermedio',desc:'Alterna le ginocchia verso il petto mantenendo il core attivo.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
- {id:'pullup',name:'Trazioni',group:'Schiena',sets:3,reps:6,rest:90,difficulty:'Avanzato',equipment:'bar',desc:'Parti da una sospensione controllata e porta il mento oltre la sbarra.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
- {id:'superman',name:'Superman',group:'Schiena',sets:3,reps:12,rest:45,difficulty:'Facile',desc:'Da prono, solleva delicatamente braccia e gambe senza forzare la schiena.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
- {id:'pike',name:'Pike push-up',group:'Spalle',sets:3,reps:8,rest:75,difficulty:'Intermedio',desc:'Forma una V rovesciata e fletti i gomiti portando la testa verso il pavimento.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
- {id:'burpee',name:'Burpee',group:'Full body',sets:3,reps:10,rest:90,difficulty:'Avanzato',desc:'Combina squat, plank e salto in una sequenza controllata.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'}
+{id:'push',name:'Push-up',group:'Petto',sets:3,reps:12,rest:60,difficulty:'Facile',desc:'Mantieni il corpo in linea, scendi controllando il movimento e spingi verso l’alto.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
+{id:'widepush',name:'Push-up larghi',group:'Petto',sets:3,reps:10,rest:60,difficulty:'Intermedio',desc:'Mani più larghe delle spalle, busto stabile e movimento controllato.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
+{id:'diamond',name:'Diamond push-up',group:'Braccia',sets:3,reps:8,rest:75,difficulty:'Avanzato',desc:'Unisci le mani sotto il petto e mantieni i gomiti controllati.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
+{id:'dip',name:'Dip',group:'Braccia',sets:3,reps:10,rest:75,difficulty:'Intermedio',desc:'Fletti i gomiti controllando la discesa. Usa un supporto stabile e sicuro.',image:'https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500'},
+{id:'squat',name:'Squat',group:'Gambe',sets:3,reps:15,rest:60,difficulty:'Facile',desc:'Piedi alla larghezza delle spalle, scendi mantenendo il controllo.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
+{id:'lunge',name:'Affondi alternati',group:'Gambe',sets:3,reps:12,rest:60,difficulty:'Facile',desc:'Fai un passo avanti, piega entrambe le ginocchia e alterna le gambe.',image:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=500'},
+{id:'bulgarian',name:'Bulgarian squat',group:'Gambe',sets:3,reps:10,rest:75,difficulty:'Avanzato',desc:'Appoggia il piede posteriore su un supporto stabile e scendi lentamente.',image:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=500'},
+{id:'calf',name:'Calf raises',group:'Gambe',sets:3,reps:20,rest:45,difficulty:'Facile',desc:'Sali sulle punte dei piedi, fermati in alto e scendi lentamente.',image:'https://images.unsplash.com/photo-1434596922112-19c563067271?w=500'},
+{id:'plank',name:'Plank',group:'Addome',sets:3,reps:30,unit:'sec',rest:45,difficulty:'Facile',desc:'Mantieni una linea retta dalla testa ai talloni, senza inarcare la schiena.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
+{id:'crunch',name:'Crunch',group:'Addome',sets:3,reps:15,rest:45,difficulty:'Facile',desc:'Solleva le spalle contraendo l’addome, senza tirare il collo.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
+{id:'legraise',name:'Leg raises',group:'Addome',sets:3,reps:12,rest:60,difficulty:'Intermedio',desc:'Solleva le gambe mantenendo controllato il bacino.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
+{id:'mountain',name:'Mountain climber',group:'Full body',sets:3,reps:30,unit:'sec',rest:45,difficulty:'Intermedio',desc:'Alterna le ginocchia verso il petto mantenendo il core attivo.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
+{id:'pullup',name:'Trazioni',group:'Schiena',sets:3,reps:6,rest:90,difficulty:'Avanzato',equipment:'bar',desc:'Parti da una sospensione controllata e porta il mento oltre la sbarra.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
+{id:'superman',name:'Superman',group:'Schiena',sets:3,reps:12,rest:45,difficulty:'Facile',desc:'Da prono, solleva delicatamente braccia e gambe senza forzare la schiena.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'},
+{id:'pike',name:'Pike push-up',group:'Spalle',sets:3,reps:8,rest:75,difficulty:'Intermedio',desc:'Forma una V rovesciata e fletti i gomiti portando la testa verso il pavimento.',image:'https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500'},
+{id:'burpee',name:'Burpee',group:'Full body',sets:3,reps:10,rest:90,difficulty:'Avanzato',desc:'Combina squat, plank e salto in una sequenza controllata.',image:'https://images.unsplash.com/photo-1566241142559-40e1dab266c6?w=500'}
 ];
 
-function showAuthMessage(message){$('authMessage').textContent=message;}
+function showAuthMessage(m){$('authMessage').textContent=m;}
 function showRegister(){
+ if(!firebaseReady){showAuthMessage('La registrazione sarà disponibile quando collegheremo Firebase.');return;}
  $('loginForm').classList.add('hidden');$('registerForm').classList.remove('hidden');showAuthMessage('');
 }
-function showLogin(){
- $('registerForm').classList.add('hidden');$('loginForm').classList.remove('hidden');showAuthMessage('');
+function showLogin(){$('registerForm').classList.add('hidden');$('loginForm').classList.remove('hidden');showAuthMessage('');}
+function requireFirebase(){if(!firebaseReady){showAuthMessage('Firebase non è ancora configurato.');return false;}return true;}
+
+function getDemoStorage(){
+ const empty={profile:{name:'Admin',surname:'',goal:'Forma fisica generale'},routines:[],sessions:[],weights:[]};
+ try{return {...empty,...JSON.parse(localStorage.getItem(DEMO_STORAGE_KEY)||'{}')};}
+ catch(e){return empty;}
 }
-function requireFirebase(){
- if(!firebaseReady){
-  showAuthMessage('Firebase non è ancora configurato. Inserisci prima le credenziali nel codice.');
-  return false;
- }
- return true;
-}
+function setDemoStorage(data){localStorage.setItem(DEMO_STORAGE_KEY,JSON.stringify(data));}
+function demoId(){return 'demo_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);}
 
 // ==================================================
 // 2. ACCOUNT
 // ==================================================
 async function register(){
  if(!requireFirebase())return;
- const name=$('regName').value.trim();
- const surname=$('regSurname').value.trim();
- const email=$('regEmail').value.trim();
- const password=$('regPassword').value;
- if(!name||!surname||!email||password.length<8){
-  showAuthMessage('Compila tutti i campi. La password deve avere almeno 8 caratteri.');return;
- }
- if(!$('privacyCheck').checked){
-  showAuthMessage('Devi accettare le condizioni e la privacy policy.');return;
- }
+ const name=$('regName').value.trim(),surname=$('regSurname').value.trim(),email=$('regEmail').value.trim(),password=$('regPassword').value;
+ if(!name||!surname||!email||password.length<8){showAuthMessage('Compila tutti i campi. La password deve avere almeno 8 caratteri.');return;}
+ if(!$('privacyCheck').checked){showAuthMessage('Devi accettare le condizioni e la privacy policy.');return;}
  try{
   const cred=await auth.createUserWithEmailAndPassword(email,password);
   await cred.user.updateProfile({displayName:name+' '+surname});
-  await db.collection('users').doc(cred.user.uid).set({
-   name,surname,email,createdAt:firebase.firestore.FieldValue.serverTimestamp(),
-   goal:'Forma fisica generale'
-  });
-  await cred.user.sendEmailVerification();
-  showAuthMessage('Account creato! Controlla la tua email per verificare l’indirizzo.');
+  await db.collection('users').doc(cred.user.uid).set({name,surname,email,createdAt:firebase.firestore.FieldValue.serverTimestamp(),goal:'Forma fisica generale'});
+  await cred.user.sendEmailVerification();showAuthMessage('Account creato! Controlla la tua email per verificare l’indirizzo.');
  }catch(e){showAuthMessage(authError(e));}
 }
 async function login(){
- if(!requireFirebase())return;
- const email=$('loginEmail').value.trim();
- const password=$('loginPassword').value;
- try{
-  await auth.signInWithEmailAndPassword(email,password);
- }catch(e){showAuthMessage(authError(e));}
+ const username=$('loginEmail').value.trim(),password=$('loginPassword').value;
+ if(!firebaseReady){
+  if(username===DEMO_USERNAME&&password===DEMO_PASSWORD){
+   currentUser={uid:'bodypro-admin-demo',email:'admin@bodypro.demo',displayName:'Admin'};
+   sessionStorage.setItem('bodypro_demo_logged','1');
+   $('authScreen').classList.add('hidden');$('app').classList.remove('hidden');
+   await loadUserData();toast('Benvenuto amministratore!');
+  }else showAuthMessage('Username o password non corretti.');
+  return;
+ }
+ try{await auth.signInWithEmailAndPassword(username,password);}catch(e){showAuthMessage(authError(e));}
 }
 async function resetPassword(){
  if(!requireFirebase())return;
- const email=$('loginEmail').value.trim();
- if(!email){showAuthMessage('Inserisci prima la tua email.');return;}
- try{await auth.sendPasswordResetEmail(email);showAuthMessage('Email di recupero inviata.');}
- catch(e){showAuthMessage(authError(e));}
+ const email=$('loginEmail').value.trim();if(!email){showAuthMessage('Inserisci prima la tua email.');return;}
+ try{await auth.sendPasswordResetEmail(email);showAuthMessage('Email di recupero inviata.');}catch(e){showAuthMessage(authError(e));}
 }
 function authError(e){
- const errors={
-  'auth/email-already-in-use':'Questa email è già registrata.',
-  'auth/invalid-email':'Email non valida.',
-  'auth/weak-password':'Password troppo debole.',
-  'auth/user-not-found':'Account non trovato.',
-  'auth/wrong-password':'Password non corretta.',
-  'auth/invalid-credential':'Email o password non corrette.',
-  'auth/too-many-requests':'Troppi tentativi. Riprova più tardi.'
- };
+ const errors={'auth/email-already-in-use':'Questa email è già registrata.','auth/invalid-email':'Email non valida.','auth/weak-password':'Password troppo debole.','auth/user-not-found':'Account non trovato.','auth/wrong-password':'Password non corretta.','auth/invalid-credential':'Email o password non corrette.','auth/too-many-requests':'Troppi tentativi. Riprova più tardi.'};
  return errors[e.code]||e.message||'Si è verificato un errore.';
 }
 async function logout(){
+ if(!firebaseReady){
+  sessionStorage.removeItem('bodypro_demo_logged');currentUser=null;
+  $('app').classList.add('hidden');$('authScreen').classList.remove('hidden');
+  $('loginEmail').value='';$('loginPassword').value='';showAuthMessage('Hai effettuato la disconnessione.');return;
+ }
  if(auth)await auth.signOut();
 }
 if(firebaseReady){
  auth.onAuthStateChanged(async user=>{
-  if(user){
-   currentUser=user;
-   $('authScreen').classList.add('hidden');
-   $('app').classList.remove('hidden');
-   await loadUserData();
-  }else{
-   currentUser=null;
-   $('app').classList.add('hidden');
-   $('authScreen').classList.remove('hidden');
-  }
+  if(user){currentUser=user;$('authScreen').classList.add('hidden');$('app').classList.remove('hidden');await loadUserData();}
+  else{currentUser=null;$('app').classList.add('hidden');$('authScreen').classList.remove('hidden');}
  });
-}else{
- showAuthMessage('Per utilizzare l’app configura Firebase nel codice.');
-}
+}else showAuthMessage('Accedi con il tuo account amministratore demo.');
 
 // ==================================================
-// 3. DATI UTENTE FIRESTORE
+// 3. DATI UTENTE
 // ==================================================
 function userDoc(){return db.collection('users').doc(currentUser.uid);}
 async function loadUserData(){
+ if(!firebaseReady){
+  const saved=getDemoStorage();
+  profile=saved.profile||{name:'Admin'};
+  routines=saved.routines||[];sessions=saved.sessions||[];weights=saved.weights||[];
+  renderAll();return;
+ }
  try{
   const [p,r,s,w]=await Promise.all([
-   userDoc().get(),
-   userDoc().collection('routines').get(),
+   userDoc().get(),userDoc().collection('routines').get(),
    userDoc().collection('sessions').orderBy('date','desc').limit(200).get(),
    userDoc().collection('weights').orderBy('date','desc').limit(100).get()
   ]);
-  profile=p.exists?p.data():{};
-  routines=r.docs.map(d=>({id:d.id,...d.data()}));
-  sessions=s.docs.map(d=>({id:d.id,...d.data()}));
-  weights=w.docs.map(d=>({id:d.id,...d.data()}));
-  if(!profile.name){
-   profile.name=currentUser.displayName||'Atleta';
-   profile.surname='';
-  }
+  profile=p.exists?p.data():{};routines=r.docs.map(d=>({id:d.id,...d.data()}));
+  sessions=s.docs.map(d=>({id:d.id,...d.data()}));weights=w.docs.map(d=>({id:d.id,...d.data()}));
+  if(!profile.name){profile.name=currentUser.displayName||'Atleta';profile.surname='';}
   renderAll();
- }catch(e){
-  console.error(e);toast('Errore nel caricamento dei dati. Controlla le regole Firestore.');
- }
+ }catch(e){console.error(e);toast('Errore nel caricamento dei dati. Controlla le regole Firestore.');}
 }
 async function saveDocument(collection,data,id){
  if(!currentUser)throw new Error('Utente non autenticato');
+ if(!firebaseReady){
+  const saved=getDemoStorage();if(!saved[collection])saved[collection]=[];
+  const documentId=id||demoId(),index=saved[collection].findIndex(x=>x.id===documentId);
+  const document={...data,id:documentId};
+  if(index>=0)saved[collection][index]=document;else saved[collection].push(document);
+  setDemoStorage(saved);return documentId;
+ }
  const ref=id?userDoc().collection(collection).doc(id):userDoc().collection(collection).doc();
- await ref.set(data,{merge:true});
- return ref.id;
+ await ref.set(data,{merge:true});return ref.id;
 }
 function renderAll(){
  const name=profile.name||'Atleta';
- $('welcomeName').textContent=name.toUpperCase();
- $('topName').textContent=name;
- $('avatar').textContent=name.charAt(0).toUpperCase();
- $('profileName').value=profile.name||'';
- $('profileSurname').value=profile.surname||'';
- $('profileAge').value=profile.age||'';
- $('profileHeight').value=profile.height||'';
- $('profileWeight').value=profile.weight||'';
- $('profileGoal').value=profile.goal||'Forma fisica generale';
- $('profileEmail').textContent=currentUser.email;
- $('statGoal').textContent=(profile.goal||'—').split(' ')[0];
- $('statWorkouts').textContent=sessions.length;
- $('statMinutes').textContent=sessions.reduce((a,s)=>a+(Number(s.minutes)||0),0);
+ $('welcomeName').textContent=name.toUpperCase();$('topName').textContent=name;$('avatar').textContent=name.charAt(0).toUpperCase();
+ $('profileName').value=profile.name||'';$('profileSurname').value=profile.surname||'';
+ $('profileAge').value=profile.age||'';$('profileHeight').value=profile.height||'';
+ $('profileWeight').value=profile.weight||'';$('profileGoal').value=profile.goal||'Forma fisica generale';
+ $('profileEmail').textContent=currentUser.email;$('statGoal').textContent=(profile.goal||'—').split(' ')[0];
+ $('statWorkouts').textContent=sessions.length;$('statMinutes').textContent=sessions.reduce((a,s)=>a+(Number(s.minutes)||0),0);
  $('statRoutines').textContent=routines.length;
  renderExercises();renderRoutines();renderProgress();renderCalendar();
 }
 async function saveProfile(){
  try{
-  const name=$('profileName').value.trim();
-  const surname=$('profileSurname').value.trim();
-  const age=Number($('profileAge').value)||null;
-  const height=Number($('profileHeight').value)||null;
-  const weight=Number($('profileWeight').value)||null;
+  const name=$('profileName').value.trim(),surname=$('profileSurname').value.trim();
+  const age=Number($('profileAge').value)||null,height=Number($('profileHeight').value)||null,weight=Number($('profileWeight').value)||null;
   if(age&&(age<13||age>100)){toast('Inserisci un’età valida.');return;}
   profile={...profile,name,surname,age,height,weight,goal:$('profileGoal').value};
-  await userDoc().set(profile,{merge:true});
-  renderAll();toast('Profilo salvato!');
+  if(!firebaseReady){const saved=getDemoStorage();saved.profile=profile;setDemoStorage(saved);renderAll();toast('Profilo salvato!');return;}
+  await userDoc().set(profile,{merge:true});renderAll();toast('Profilo salvato!');
  }catch(e){toast('Errore nel salvataggio.');}
 }
 
@@ -716,75 +381,45 @@ document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',(
 // 5. ESERCIZI
 // ==================================================
 function renderExercises(){
- const query=($('exerciseSearch')?.value||'').toLowerCase();
- const group=$('exerciseGroup')?.value||'all';
- const filtered=exercises.filter(e=>
-  (e.name.toLowerCase().includes(query)||e.group.toLowerCase().includes(query))&&
-  (group==='all'||e.group===group)
- );
+ const query=($('exerciseSearch')?.value||'').toLowerCase(),group=$('exerciseGroup')?.value||'all';
+ const filtered=exercises.filter(e=>(e.name.toLowerCase().includes(query)||e.group.toLowerCase().includes(query))&&(group==='all'||e.group===group));
  $('exerciseList').innerHTML=filtered.map(e=>`
-  <div class="exercise">
-   <div class="exercise-layout">
-    <img class="exercise-photo" src="${e.image}" alt="" loading="lazy" onerror="this.style.display='none'">
-    <div class="exercise-info">
-     <strong>${e.name}</strong>
-     <small>${e.group} · ${e.difficulty} · ${e.sets} serie × ${e.reps} ${e.unit||'rip.'}</small>
-    </div>
-   </div>
-   <button class="secondary" onclick="addExerciseToNewRoutine('${e.id}')">+ SCHEDA</button>
-  </div>`).join('')||'<div class="empty">Nessun esercizio trovato.</div>';
+ <div class="exercise"><div class="exercise-layout"><img class="exercise-photo" src="${e.image}" alt="" loading="lazy" onerror="this.style.display='none'">
+ <div class="exercise-info"><strong>${e.name}</strong><small>${e.group} · ${e.difficulty} · ${e.sets} serie × ${e.reps} ${e.unit||'rip.'}</small></div></div>
+ <button class="secondary" onclick="addExerciseToNewRoutine('${e.id}')">+ SCHEDA</button></div>`).join('')||'<div class="empty">Nessun esercizio trovato.</div>';
 }
-function addExerciseToNewRoutine(id){
- go('routines');openCreateRoutine();
- const e=exercises.find(x=>x.id===id);
- if(e){draft.push({...e});renderDraft();}
-}
-function populateExerciseSelect(){
- $('routineExercise').innerHTML=exercises.map(e=>`<option value="${e.id}">${e.name} · ${e.group}</option>`).join('');
-}
-function openCreateRoutine(){
- $('routineEditor').classList.remove('hidden');
- $('routineName').value='';draft=[];populateExerciseSelect();renderDraft();
-}
+function addExerciseToNewRoutine(id){go('routines');openCreateRoutine();const e=exercises.find(x=>x.id===id);if(e){draft.push({...e});renderDraft();}}
+function populateExerciseSelect(){$('routineExercise').innerHTML=exercises.map(e=>`<option value="${e.id}">${e.name} · ${e.group}</option>`).join('');}
+function openCreateRoutine(){$('routineEditor').classList.remove('hidden');$('routineName').value='';draft=[];populateExerciseSelect();renderDraft();}
 function closeCreateRoutine(){$('routineEditor').classList.add('hidden');draft=[];}
-function addExerciseToDraft(){
- const e=exercises.find(x=>x.id===$('routineExercise').value);
- if(e){draft.push({...e});renderDraft();}
-}
+function addExerciseToDraft(){const e=exercises.find(x=>x.id===$('routineExercise').value);if(e){draft.push({...e});renderDraft();}}
 function renderDraft(){
- $('draftList').innerHTML=draft.map((e,i)=>`
-  <div class="routine-item"><span>${e.name} · ${e.sets}×${e.reps}</span>
-  <button class="secondary" onclick="removeDraft(${i})">✕</button></div>`).join('')||'<p class="muted">Nessun esercizio aggiunto.</p>';
+ $('draftList').innerHTML=draft.map((e,i)=>`<div class="routine-item"><span>${e.name} · ${e.sets}×${e.reps}</span><button class="secondary" onclick="removeDraft(${i})">✕</button></div>`).join('')||'<p class="muted">Nessun esercizio aggiunto.</p>';
 }
 function removeDraft(i){draft.splice(i,1);renderDraft();}
 async function saveRoutine(){
- const name=$('routineName').value.trim();
- if(!name||!draft.length){toast('Inserisci il nome e almeno un esercizio.');return;}
+ const name=$('routineName').value.trim();if(!name||!draft.length){toast('Inserisci il nome e almeno un esercizio.');return;}
  try{
-  const id=await saveDocument('routines',{
-   name,group:$('routineGroup').value,
-   exercises:draft.map(e=>({id:e.id,name:e.name,group:e.group,sets:e.sets,reps:e.reps,unit:e.unit||'rip.',rest:e.rest,image:e.image,desc:e.desc})),
-   createdAt:firebase.firestore.FieldValue.serverTimestamp()
-  });
-  routines.push({id,name,group:$('routineGroup').value,exercises:draft.map(e=>({...e}))});
-  closeCreateRoutine();renderAll();toast('Scheda salvata!');
- }catch(e){toast('Errore nel salvataggio.');}
+  const exerciseData=draft.map(e=>({id:e.id,name:e.name,group:e.group,sets:e.sets,reps:e.reps,unit:e.unit||'rip.',rest:e.rest,image:e.image,desc:e.desc}));
+  const group=$('routineGroup').value;
+  const id=await saveDocument('routines',{name,group,exercises:exerciseData,createdAt:firebaseReady?firebase.firestore.FieldValue.serverTimestamp():new Date()});
+  routines.push({id,name,group,exercises:exerciseData});closeCreateRoutine();renderAll();toast('Scheda salvata!');
+ }catch(e){console.error(e);toast('Errore nel salvataggio.');}
 }
 function renderRoutines(){
  $('routineList').innerHTML=routines.map(r=>`
-  <div class="card" style="margin-bottom:12px">
-   <div class="row"><div><h3>${r.name}</h3><span class="tag">${r.group||'Personalizzata'}</span></div>
-   <button class="primary big-btn" onclick="startWorkout('${r.id}')">INIZIA →</button></div>
-   <p>${(r.exercises||[]).length} esercizi</p>
-   ${(r.exercises||[]).map(e=>`<div class="routine-item"><span>${e.name}</span><small>${e.sets} × ${e.reps} ${e.unit||'rip.'}</small></div>`).join('')}
-   <button class="link-btn" onclick="deleteRoutine('${r.id}')">Elimina scheda</button>
-  </div>`).join('')||'<div class="empty">Non hai ancora creato schede. Premi NUOVA per iniziare.</div>';
+ <div class="card" style="margin-bottom:12px"><div class="row"><div><h3>${r.name}</h3><span class="tag">${r.group||'Personalizzata'}</span></div><button class="primary big-btn" onclick="startWorkout('${r.id}')">INIZIA →</button></div>
+ <p>${(r.exercises||[]).length} esercizi</p>${(r.exercises||[]).map(e=>`<div class="routine-item"><span>${e.name}</span><small>${e.sets} × ${e.reps} ${e.unit||'rip.'}</small></div>`).join('')}
+ <button class="link-btn" onclick="deleteRoutine('${r.id}')">Elimina scheda</button></div>`).join('')||'<div class="empty">Non hai ancora creato schede. Premi NUOVA per iniziare.</div>';
 }
 async function deleteRoutine(id){
  if(!confirm('Vuoi eliminare questa scheda?'))return;
  try{
-  await userDoc().collection('routines').doc(id).delete();
-  routines=routines.filter(r=>r.id!==id);renderAll();toast('Scheda eliminata.');
+  if(!firebaseReady){
+   const saved=getDemoStorage();saved.routines=saved.routines.filter(r=>r.id!==id);setDemoStorage(saved);
+   routines=routines.filter(r=>r.id!==id);renderAll();toast('Scheda eliminata.');return;
+  }
+  await userDoc().collection('routines').doc(id).delete();routines=routines.filter(r=>r.id!==id);renderAll();toast('Scheda eliminata.');
  }catch(e){toast('Errore eliminazione.');}
 }
 
@@ -792,167 +427,86 @@ async function deleteRoutine(id){
 // 6. PERSONAL TRAINER
 // ==================================================
 function generatePlan(){
- const days=Number($('trainerDays').value);
- const duration=Number($('trainerDuration').value);
- const level=$('trainerLevel').value;
- const equipment=$('trainerEquipment').value;
- const focus=$('trainerFocus').value;
- const groupMap={
-  all:['Full body','Parte superiore','Parte inferiore','Full body','Parte superiore','Parte inferiore','Full body'],
-  upper:['Parte superiore','Parte superiore','Parte superiore','Parte superiore','Parte superiore','Parte superiore','Parte superiore'],
-  lower:['Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore'],
-  core:['Core','Core','Core','Core','Core','Core','Core']
- };
- const groups=groupMap[focus];
- const selected=groups.slice(0,days);
- const levelMultiplier=level==='Principiante'?0.8:level==='Avanzato'?1.2:1;
- const target=duration<30?3:duration<60?4:5;
+ const days=Number($('trainerDays').value),duration=Number($('trainerDuration').value),level=$('trainerLevel').value,equipment=$('trainerEquipment').value,focus=$('trainerFocus').value;
+ const groupMap={all:['Full body','Parte superiore','Parte inferiore','Full body','Parte superiore','Parte inferiore','Full body'],upper:['Parte superiore','Parte superiore','Parte superiore','Parte superiore','Parte superiore','Parte superiore','Parte superiore'],lower:['Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore','Parte inferiore'],core:['Core','Core','Core','Core','Core','Core','Core']};
+ const groups=groupMap[focus],selected=groups.slice(0,days),levelMultiplier=level==='Principiante'?0.8:level==='Avanzato'?1.2:1,target=duration<30?3:duration<60?4:5;
  const plan=selected.map((g,i)=>{
   let candidates=exercises.filter(e=>{
-   const okGroup=g==='Full body'?true:
-    g==='Parte superiore'?['Petto','Braccia','Spalle','Schiena'].includes(e.group):
-    g==='Parte inferiore'?e.group==='Gambe':
-    g==='Core'?e.group==='Addome':false;
+   const okGroup=g==='Full body'?true:g==='Parte superiore'?['Petto','Braccia','Spalle','Schiena'].includes(e.group):g==='Parte inferiore'?e.group==='Gambe':g==='Core'?e.group==='Addome':false;
    return okGroup&&(equipment!=='body'||e.id!=='pullup');
   });
   candidates=candidates.slice(0,target);
-  return {name:`Giorno ${i+1} · ${g}`,group:g,exercises:candidates.map(e=>({
-   ...e,sets:Math.max(2,Math.round(e.sets*levelMultiplier))
-  }))};
+  return{name:`Giorno ${i+1} · ${g}`,group:g,exercises:candidates.map(e=>({...e,sets:Math.max(2,Math.round(e.sets*levelMultiplier))}))};
  });
- const html=plan.map((p,i)=>`
-  <div class="card" style="margin-bottom:12px">
-   <h3>${p.name}</h3>
-   <p>${duration} minuti · ${level}</p>
-   ${p.exercises.map(e=>`<div class="routine-item"><span>${e.name}</span><small>${e.sets} × ${e.reps}</small></div>`).join('')}
-   <button class="primary" onclick="saveGeneratedPlan(${i})">SALVA QUESTA SCHEDA</button>
-  </div>`).join('');
- $('generatedPlan').innerHTML='<h2 class="page-title">IL TUO PROGRAMMA</h2>'+html;
+ $('generatedPlan').innerHTML='<h2 class="page-title">IL TUO PROGRAMMA</h2>'+plan.map((p,i)=>`
+ <div class="card" style="margin-bottom:12px"><h3>${p.name}</h3><p>${duration} minuti · ${level}</p>
+ ${p.exercises.map(e=>`<div class="routine-item"><span>${e.name}</span><small>${e.sets} × ${e.reps}</small></div>`).join('')}
+ <button class="primary" onclick="saveGeneratedPlan(${i})">SALVA QUESTA SCHEDA</button></div>`).join('');
  window.generatedPlan=plan;
 }
 async function saveGeneratedPlan(i){
  const p=window.generatedPlan?.[i];if(!p)return;
  try{
-  const id=await saveDocument('routines',{
-   name:p.name,group:p.group,
-   exercises:p.exercises.map(e=>({id:e.id,name:e.name,group:e.group,sets:e.sets,reps:e.reps,unit:e.unit||'rip.',rest:e.rest,image:e.image,desc:e.desc}))
-  });
-  routines.push({id,...p});renderAll();toast('Allenamento salvato nelle tue schede!');
+  const exerciseData=p.exercises.map(e=>({id:e.id,name:e.name,group:e.group,sets:e.sets,reps:e.reps,unit:e.unit||'rip.',rest:e.rest,image:e.image,desc:e.desc}));
+  const id=await saveDocument('routines',{name:p.name,group:p.group,exercises:exerciseData});
+  routines.push({...p,id,exercises:exerciseData});renderAll();toast('Allenamento salvato nelle tue schede!');
  }catch(e){toast('Errore nel salvataggio.');}
 }
 
 // ==================================================
 // 7. ALLENAMENTO
 // ==================================================
-function startWorkout(id){
- const r=routines.find(x=>x.id===id);
- if(!r||!r.exercises?.length)return;
- beginWorkout(r.exercises,r.name);
-}
-function beginWorkout(list,name){
- activeWorkout={list:list.map(e=>({...e})),name,started:Date.now(),sets:0};
- workoutIndex=0;workoutSet=1;completedSets=0;
- $('workoutScreen').classList.remove('hidden');
- renderWorkoutExercise();
-}
+function startWorkout(id){const r=routines.find(x=>x.id===id);if(!r||!r.exercises?.length)return;beginWorkout(r.exercises,r.name);}
+function beginWorkout(list,name){activeWorkout={list:list.map(e=>({...e})),name,started:Date.now(),sets:0};workoutIndex=0;workoutSet=1;completedSets=0;$('workoutScreen').classList.remove('hidden');renderWorkoutExercise();}
 function renderWorkoutExercise(){
- const e=activeWorkout?.list[workoutIndex];
- if(!e){finishWorkout();return;}
+ const e=activeWorkout?.list[workoutIndex];if(!e){finishWorkout();return;}
  $('workoutCounter').textContent=`ESERCIZIO ${workoutIndex+1} DI ${activeWorkout.list.length}`;
- $('workoutExercise').textContent=e.name;
- $('workoutPhoto').src=e.image||'';
+ $('workoutExercise').textContent=e.name;$('workoutPhoto').src=e.image||'';
  $('workoutDetails').textContent=`${e.group} · ${e.reps} ${e.unit||'ripetizioni'} · Recupero ${e.rest||60} secondi`;
- $('workoutSet').textContent=`${workoutSet} / ${e.sets}`;
- $('restTimer').classList.add('hidden');
+ $('workoutSet').textContent=`${workoutSet} / ${e.sets}`;$('restTimer').classList.add('hidden');
 }
 function completeSet(){
  const e=activeWorkout?.list[workoutIndex];if(!e)return;
  completedSets++;activeWorkout.sets++;
- if(workoutSet<e.sets){workoutSet++;renderWorkoutExercise();startRest(e.rest||60);}
- else{nextExercise();}
+ if(workoutSet<e.sets){workoutSet++;renderWorkoutExercise();startRest(e.rest||60);}else nextExercise();
 }
-function nextExercise(){
- if(!activeWorkout)return;
- workoutIndex++;workoutSet=1;
- if(workoutIndex>=activeWorkout.list.length)finishWorkout();
- else renderWorkoutExercise();
-}
+function nextExercise(){if(!activeWorkout)return;workoutIndex++;workoutSet=1;if(workoutIndex>=activeWorkout.list.length)finishWorkout();else renderWorkoutExercise();}
 function startRest(seconds=30){
- clearInterval(restInterval);
- restRemaining=seconds;
- $('restTimer').classList.remove('hidden');
+ clearInterval(restInterval);restRemaining=seconds;$('restTimer').classList.remove('hidden');
  $('restTimer').textContent='00:'+String(restRemaining).padStart(2,'0');
- restInterval=setInterval(()=>{
-  restRemaining--;
-  $('restTimer').textContent='00:'+String(Math.max(0,restRemaining)).padStart(2,'0');
-  if(restRemaining<=0){clearInterval(restInterval);$('restTimer').classList.add('hidden');}
- },1000);
+ restInterval=setInterval(()=>{restRemaining--;$('restTimer').textContent='00:'+String(Math.max(0,restRemaining)).padStart(2,'0');if(restRemaining<=0){clearInterval(restInterval);$('restTimer').classList.add('hidden');}},1000);
 }
 async function finishWorkout(){
- if(!activeWorkout)return;
- clearInterval(restInterval);
+ if(!activeWorkout)return;clearInterval(restInterval);
  const minutes=Math.max(1,Math.round((Date.now()-activeWorkout.started)/60000));
- const data={
-  name:activeWorkout.name,minutes,sets:activeWorkout.sets,
-  exercises:activeWorkout.list.length,
-  date:firebase.firestore.FieldValue.serverTimestamp(),
-  day:new Date().toISOString().slice(0,10)
- };
- try{
-  const id=await saveDocument('sessions',data);
-  sessions.unshift({id,...data,date:new Date(),day:data.day});
- }catch(e){toast('Allenamento completato ma non salvato.');}
- activeWorkout=null;
- $('workoutScreen').classList.add('hidden');
- renderAll();
- toast(`Allenamento completato! ${minutes} minuti.`);
+ const data={name:activeWorkout.name,minutes,sets:activeWorkout.sets,exercises:activeWorkout.list.length,date:firebaseReady?firebase.firestore.FieldValue.serverTimestamp():new Date(),day:new Date().toISOString().slice(0,10)};
+ try{const id=await saveDocument('sessions',data);sessions.unshift({id,...data,date:new Date(),day:data.day});}
+ catch(e){toast('Allenamento completato ma non salvato.');}
+ activeWorkout=null;$('workoutScreen').classList.add('hidden');renderAll();toast(`Allenamento completato! ${minutes} minuti.`);
 }
 function stopWorkout(){
  if(!activeWorkout)return;
- if(confirm('Vuoi interrompere questo allenamento? I risultati parziali non saranno registrati.')){
-  clearInterval(restInterval);activeWorkout=null;$('workoutScreen').classList.add('hidden');
- }
+ if(confirm('Vuoi interrompere questo allenamento? I risultati parziali non saranno registrati.')){clearInterval(restInterval);activeWorkout=null;$('workoutScreen').classList.add('hidden');}
 }
 
 // ==================================================
 // 8. PROGRESSI E PESO
 // ==================================================
 function renderProgress(){
- const totalMinutes=sessions.reduce((a,s)=>a+(Number(s.minutes)||0),0);
- const totalSets=sessions.reduce((a,s)=>a+(Number(s.sets)||0),0);
- $('progressWorkouts').textContent=sessions.length;
- $('progressMinutes').textContent=totalMinutes;
- $('progressSets').textContent=totalSets;
- const cutoff=Date.now()-7*86400000;
- $('progressAverage').textContent=sessions.filter(s=>getSessionDate(s)>=cutoff).length;
- $('historyList').innerHTML=sessions.slice(0,30).map(s=>`
-  <div class="routine-item">
-   <span><strong>${s.name||'Allenamento'}</strong><br><small>${formatDate(getSessionDate(s))}</small></span>
-   <small>${s.minutes||0} min · ${s.sets||0} serie</small>
-  </div>`).join('')||'<p class="muted">I tuoi allenamenti completati appariranno qui.</p>';
+ const totalMinutes=sessions.reduce((a,s)=>a+(Number(s.minutes)||0),0),totalSets=sessions.reduce((a,s)=>a+(Number(s.sets)||0),0);
+ $('progressWorkouts').textContent=sessions.length;$('progressMinutes').textContent=totalMinutes;$('progressSets').textContent=totalSets;
+ const cutoff=Date.now()-7*86400000;$('progressAverage').textContent=sessions.filter(s=>getSessionDate(s)>=cutoff).length;
+ $('historyList').innerHTML=sessions.slice(0,30).map(s=>`<div class="routine-item"><span><strong>${s.name||'Allenamento'}</strong><br><small>${formatDate(getSessionDate(s))}</small></span><small>${s.minutes||0} min · ${s.sets||0} serie</small></div>`).join('')||'<p class="muted">I tuoi allenamenti completati appariranno qui.</p>';
  $('weightHistory').textContent=weights.slice(0,10).map(w=>`${w.weight} kg · ${formatDate(w.date?.toDate?w.date.toDate():new Date(w.date))}`).join(' | ')||'Nessun peso registrato.';
- const week=sessions.filter(s=>getSessionDate(s)>=cutoff).length;
- $('weeklyCount').textContent=week+' allenamenti';
- $('weeklyBar').style.width=Math.min(100,week/4*100)+'%';
+ const week=sessions.filter(s=>getSessionDate(s)>=cutoff).length;$('weeklyCount').textContent=week+' allenamenti';$('weeklyBar').style.width=Math.min(100,week/4*100)+'%';
 }
-function getSessionDate(s){
- if(s.date?.toDate)return s.date.toDate().getTime();
- const d=s.date?new Date(s.date):new Date(s.day||Date.now());
- return d.getTime();
-}
+function getSessionDate(s){if(s.date?.toDate)return s.date.toDate().getTime();const d=s.date?new Date(s.date):new Date(s.day||Date.now());return d.getTime();}
 async function saveWeight(){
- const weight=Number($('weightInput').value);
- if(!weight||weight<20||weight>400){toast('Inserisci un peso valido.');return;}
- try{
-  const id=await saveDocument('weights',{weight,date:firebase.firestore.FieldValue.serverTimestamp()});
-  weights.unshift({id,weight,date:new Date()});
-  $('weightInput').value='';renderProgress();toast('Peso registrato!');
- }catch(e){toast('Errore nel salvataggio.');}
+ const weight=Number($('weightInput').value);if(!weight||weight<20||weight>400){toast('Inserisci un peso valido.');return;}
+ try{const id=await saveDocument('weights',{weight,date:firebaseReady?firebase.firestore.FieldValue.serverTimestamp():new Date()});weights.unshift({id,weight,date:new Date()});$('weightInput').value='';renderProgress();toast('Peso registrato!');}
+ catch(e){toast('Errore nel salvataggio.');}
 }
-function formatDate(d){
- const date=d instanceof Date?d:new Date(d);
- return date.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'numeric'});
-}
+function formatDate(d){const date=d instanceof Date?d:new Date(d);return date.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'numeric'});}
 
 // ==================================================
 // 9. CALENDARIO
@@ -961,39 +515,28 @@ function changeMonth(n){calendarDate.setMonth(calendarDate.getMonth()+n);renderC
 function renderCalendar(){
  const year=calendarDate.getFullYear(),month=calendarDate.getMonth();
  $('calendarTitle').textContent=calendarDate.toLocaleDateString('it-IT',{month:'long',year:'numeric'});
- const first=new Date(year,month,1).getDay();
- const days=new Date(year,month+1,0).getDate();
+ const first=new Date(year,month,1).getDay(),days=new Date(year,month+1,0).getDate();
  const done=new Set(sessions.map(s=>s.day||formatISO(getSessionDate(s))));
  let html=['LUN','MAR','MER','GIO','VEN','SAB','DOM'].map(d=>`<div class="day">${d}</div>`).join('');
  for(let i=0;i<(first+6)%7;i++)html+='<div></div>';
- for(let d=1;d<=days;d++){
-  const date=new Date(year,month,d);
-  const iso=formatISO(date.getTime());
-  const today=iso===formatISO(Date.now());
-  html+=`<div class="day ${done.has(iso)?'done':''} ${today?'today':''}">${d}${done.has(iso)?'<br>✓':''}</div>`;
- }
+ for(let d=1;d<=days;d++){const date=new Date(year,month,d),iso=formatISO(date.getTime()),today=iso===formatISO(Date.now());html+=`<div class="day ${done.has(iso)?'done':''} ${today?'today':''}">${d}${done.has(iso)?'<br>✓':''}</div>`;}
  $('calendarGrid').innerHTML=html;
 }
-function formatISO(time){
- const d=new Date(time);
- return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-}
+function formatISO(time){const d=new Date(time);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
 
 // ==================================================
 // 10. UTILITÀ
 // ==================================================
 let toastTimer;
 function toast(message){
- let el=$('toast');
- if(!el){el=document.createElement('div');el.id='toast';el.className='toast';document.body.appendChild(el);}
- el.textContent=message;el.classList.remove('hidden');
- clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.add('hidden'),2800);
+ let el=$('toast');if(!el){el=document.createElement('div');el.id='toast';el.className='toast';document.body.appendChild(el);}
+ el.textContent=message;el.classList.remove('hidden');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.add('hidden'),2800);
 }
 
-// Schermata demo di configurazione
-if(!firebaseReady){
- // L'accesso resta bloccato finché Firebase non viene configurato.
- console.info('BODY PRO: inserire firebaseConfig per attivare autenticazione e dati.');
+// Ripristino sessione demo nella stessa scheda del browser
+if(!firebaseReady&&sessionStorage.getItem('bodypro_demo_logged')==='1'){
+ currentUser={uid:'bodypro-admin-demo',email:'admin@bodypro.demo',displayName:'Admin'};
+ $('authScreen').classList.add('hidden');$('app').classList.remove('hidden');loadUserData();
 }
 </script>
 </body>
